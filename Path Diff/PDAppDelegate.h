@@ -11,5 +11,11 @@
 @interface PDAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSTextField *leftTextField;
+@property (weak) IBOutlet NSTextField *rightTextField;
+@property (weak) IBOutlet NSScrollView *diffTextView;
+
+- (IBAction)leftTextFieldEdited:(NSTextField *)sender;
+- (IBAction)rightTextFieldEdited:(NSTextField *)sender;
 
 @end

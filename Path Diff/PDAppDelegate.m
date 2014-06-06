@@ -15,4 +15,12 @@
     // Insert code here to initialize your application
 }
 
+- (IBAction)leftTextFieldEdited:(NSTextField *)sender
+{
+}
+
+- (IBAction)rightTextFieldEdited:(NSTextField *)sender
+{
+}
+
 @end
