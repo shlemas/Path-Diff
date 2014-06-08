@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "PDEdit.h"
 
-@interface PDDPath : NSObject
+@interface PDDPath : NSObject <NSCopying>
 
 @property PDDPath *parentDPath;
 @property PDEdit *edit;
 @property PDEdit *equal;
 @property NSInteger x;
 
-- (PDDPath *)clone;
+- (id)copyWithZone:(NSZone *)zone;
 
-+ (PDDPath *)dPathWithEndXValue:(NSInteger)endXValue;
++ (PDDPath *)dPathWithX:(NSInteger)endXValue;
 
 @end

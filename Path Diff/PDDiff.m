@@ -35,7 +35,7 @@
     if (MAX > 0) {
         PDDPathArray *V = [PDDPathArray dPathArrayWithNumberOfKLines:(MAX * 2)];
 
-        [V setDPath:[PDDPath dPathWithEndXValue:0] forKLine:1];
+        [V setDPath:[PDDPath dPathWithX:0] forKLine:1];
 
         for (NSInteger D = 0; D <= MAX; D++) {
             for (NSInteger k = -D; k <= D; k += 2) {
@@ -45,12 +45,12 @@
 
                 if (k == -D || (k != D && [V dPathForKLine:(k + 1)].x >= [V dPathForKLine:(k - 1)].x)) {
                     PDDPath *parentDPath = [V dPathForKLine:(k + 1)];
-                    dPath.parentDPath = [parentDPath clone];
+                    dPath.parentDPath = [parentDPath copy];
                     dPath.x = parentDPath.x;
                     editType = PD_INSERT;
                 } else {
                     PDDPath *parentDPath = [V dPathForKLine:(k - 1)];
-                    dPath.parentDPath = [parentDPath clone];
+                    dPath.parentDPath = [parentDPath copy];
                     dPath.x = parentDPath.x + 1;
                     editType = PD_DELETE;
                 }

@@ -33,11 +33,11 @@
 {
     PDDPathArray *dPaths = [[PDDPathArray alloc] initWithNumberOfKLines:5];
 
-    [dPaths setDPath:[PDDPath dPathWithEndXValue:-2] forKLine:-2];
-    [dPaths setDPath:[PDDPath dPathWithEndXValue:-1] forKLine:-1];
-    [dPaths setDPath:[PDDPath dPathWithEndXValue: 0] forKLine: 0];
-    [dPaths setDPath:[PDDPath dPathWithEndXValue: 1] forKLine: 1];
-    [dPaths setDPath:[PDDPath dPathWithEndXValue: 2] forKLine: 2];
+    [dPaths setDPath:[PDDPath dPathWithX:-2] forKLine:-2];
+    [dPaths setDPath:[PDDPath dPathWithX:-1] forKLine:-1];
+    [dPaths setDPath:[PDDPath dPathWithX: 0] forKLine: 0];
+    [dPaths setDPath:[PDDPath dPathWithX: 1] forKLine: 1];
+    [dPaths setDPath:[PDDPath dPathWithX: 2] forKLine: 2];
 
     XCTAssertEqual([dPaths numberOfKLines], 5);
     XCTAssertEqual([[dPaths dPathForKLine:-2] x], -2);

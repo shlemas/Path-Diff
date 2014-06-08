@@ -10,16 +10,17 @@
 
 @implementation PDDPath
 
-- (PDDPath *)clone
+- (id)copyWithZone:(NSZone *)zone
 {
-    PDDPath *copy = [PDDPath dPathWithEndXValue:self.x];
+    PDDPath *copy = [[PDDPath allocWithZone:zone] init];
     copy.parentDPath = self.parentDPath;
     copy.edit = self.edit;
     copy.equal = self.equal;
+    copy.x = self.x;
     return copy;
 }
 
-+ (PDDPath *)dPathWithEndXValue:(NSInteger)endXValue
++ (PDDPath *)dPathWithX:(NSInteger)endXValue
 {
     PDDPath *dPath = [PDDPath new];
     dPath.x = endXValue;
