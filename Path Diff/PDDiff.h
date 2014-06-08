@@ -10,7 +10,7 @@
 
 @interface PDDiff : NSObject
 
-- (NSInteger)differenceBetweenString:(NSString *)leftString
-                           andString:(NSString *)rightString;
++ (NSArray *)differencesBetweenString:(NSString *)leftString
+                            andString:(NSString *)rightString;
 
 @end

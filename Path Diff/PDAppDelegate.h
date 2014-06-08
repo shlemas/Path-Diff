@@ -13,9 +13,8 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *leftTextField;
 @property (weak) IBOutlet NSTextField *rightTextField;
-@property (weak) IBOutlet NSScrollView *diffTextView;
+@property (unsafe_unretained) IBOutlet NSTextView *diffTextView;
 
-- (IBAction)leftTextFieldEdited:(NSTextField *)sender;
-- (IBAction)rightTextFieldEdited:(NSTextField *)sender;
+- (void)controlTextDidChange:(NSNotification *)aNotification;
 
 @end

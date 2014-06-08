@@ -20,6 +20,8 @@
 		98251E6B1941314200542437 /* Path_DiffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E6A1941314200542437 /* Path_DiffTests.m */; };
 		98251E761941368E00542437 /* PDDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E751941368E00542437 /* PDDiff.m */; };
 		98251E7919413D6C00542437 /* PDDPathArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E7819413D6C00542437 /* PDDPathArray.m */; };
+		98FF724019437B0B008A24EF /* PDDPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FF723F19437B0B008A24EF /* PDDPath.m */; };
+		98FF724319437B57008A24EF /* PDEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FF724219437B57008A24EF /* PDEdit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		98251E751941368E00542437 /* PDDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDiff.m; sourceTree = "<group>"; };
 		98251E7719413D6C00542437 /* PDDPathArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDPathArray.h; sourceTree = "<group>"; };
 		98251E7819413D6C00542437 /* PDDPathArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDPathArray.m; sourceTree = "<group>"; };
+		98FF723E19437B0B008A24EF /* PDDPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDPath.h; sourceTree = "<group>"; };
+		98FF723F19437B0B008A24EF /* PDDPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDPath.m; sourceTree = "<group>"; };
+		98FF724119437B57008A24EF /* PDEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDEdit.h; sourceTree = "<group>"; };
+		98FF724219437B57008A24EF /* PDEdit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDEdit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,10 @@
 				98251E531941314100542437 /* PDAppDelegate.m */,
 				98251E7719413D6C00542437 /* PDDPathArray.h */,
 				98251E7819413D6C00542437 /* PDDPathArray.m */,
+				98FF724119437B57008A24EF /* PDEdit.h */,
+				98FF724219437B57008A24EF /* PDEdit.m */,
+				98FF723E19437B0B008A24EF /* PDDPath.h */,
+				98FF723F19437B0B008A24EF /* PDDPath.m */,
 				98251E741941368E00542437 /* PDDiff.h */,
 				98251E751941368E00542437 /* PDDiff.m */,
 				98251E551941314100542437 /* MainMenu.xib */,
@@ -264,7 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				98251E7919413D6C00542437 /* PDDPathArray.m in Sources */,
+				98FF724019437B0B008A24EF /* PDDPath.m in Sources */,
 				98251E541941314100542437 /* PDAppDelegate.m in Sources */,
+				98FF724319437B57008A24EF /* PDEdit.m in Sources */,
 				98251E4D1941314100542437 /* main.m in Sources */,
 				98251E761941368E00542437 /* PDDiff.m in Sources */,
 			);

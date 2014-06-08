@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PDDPath.h"
 
 @interface PDDPathArray : NSObject
 
 - (id)initWithNumberOfKLines:(NSInteger)numberOfKLines;
 
 - (NSInteger)numberOfKLines;
-- (NSInteger)xValueForKLine:(NSInteger)kLine;
-- (void)setXValue:(NSInteger)dPath forKLine:(NSInteger)kLine;
+- (PDDPath *)dPathForKLine:(NSInteger)kLine;
+- (void)setDPath:(PDDPath *)dPath forKLine:(NSInteger)kLine;
 
 + (id)dPathArrayWithNumberOfKLines:(NSInteger)numberOfKLines;
 

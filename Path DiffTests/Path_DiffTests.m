@@ -33,74 +33,90 @@
 {
     PDDPathArray *dPaths = [[PDDPathArray alloc] initWithNumberOfKLines:5];
 
-    [dPaths setXValue:-2 forKLine:-2];
-    [dPaths setXValue:-1 forKLine:-1];
-    [dPaths setXValue: 0 forKLine: 0];
-    [dPaths setXValue: 1 forKLine: 1];
-    [dPaths setXValue: 2 forKLine: 2];
+    [dPaths setDPath:[PDDPath dPathWithEndXValue:-2] forKLine:-2];
+    [dPaths setDPath:[PDDPath dPathWithEndXValue:-1] forKLine:-1];
+    [dPaths setDPath:[PDDPath dPathWithEndXValue: 0] forKLine: 0];
+    [dPaths setDPath:[PDDPath dPathWithEndXValue: 1] forKLine: 1];
+    [dPaths setDPath:[PDDPath dPathWithEndXValue: 2] forKLine: 2];
 
     XCTAssertEqual([dPaths numberOfKLines], 5);
-    XCTAssertEqual([dPaths xValueForKLine:-2], -2);
-    XCTAssertEqual([dPaths xValueForKLine:-1], -1);
-    XCTAssertEqual([dPaths xValueForKLine: 0],  0);
-    XCTAssertEqual([dPaths xValueForKLine: 1],  1);
-    XCTAssertEqual([dPaths xValueForKLine: 2],  2);
+    XCTAssertEqual([[dPaths dPathForKLine:-2] x], -2);
+    XCTAssertEqual([[dPaths dPathForKLine:-1] x], -1);
+    XCTAssertEqual([[dPaths dPathForKLine: 0] x],  0);
+    XCTAssertEqual([[dPaths dPathForKLine: 1] x],  1);
+    XCTAssertEqual([[dPaths dPathForKLine: 2] x],  2);
 }
 
 - (void)testPDDiffEmptyStrings
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@""
-                                       andString:@""], 0);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"" andString:@""];
+    XCTAssertEqual([diffResult count], 1);
+
+    PDEdit *edit = [diffResult firstObject];
+    XCTAssertEqual(edit.type, PD_EQUAL);
+    XCTAssertEqualObjects(edit.string, @"");
 }
 
 - (void)testPDDiffEmptyStringAndString
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@""
-                                       andString:@"123"], 3);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"" andString:@"123"];
+    XCTAssertEqual([diffResult count], 1);
+
+    PDEdit *edit = [diffResult firstObject];
+    XCTAssertEqual(edit.type, PD_INSERT);
+    XCTAssertEqualObjects(edit.string, @"123");
 }
 
 - (void)testPDDiffStringAndEmptyString
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@"456"
-                                       andString:@""], 3);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"456" andString:@""];
+    XCTAssertEqual([diffResult count], 1);
+
+    PDEdit *edit = [diffResult firstObject];
+    XCTAssertEqual(edit.type, PD_DELETE);
+    XCTAssertEqualObjects(edit.string, @"456");
 }
 
 - (void)testPDDiffEqualStrings
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@"foo"
-                                       andString:@"foo"], 0);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"foo" andString:@"foo"];
+    XCTAssertEqual([diffResult count], 1);
+
+    PDEdit *edit = [diffResult firstObject];
+    XCTAssertEqual(edit.type, PD_EQUAL);
+    XCTAssertEqualObjects(edit.string, @"foo");
 }
 
 - (void)testPDDiffCompletelyDifferentStrings
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@"foo"
-                                       andString:@"bar"], 6);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"foo" andString:@"bar"];
+    XCTAssertEqual([diffResult count], 2);
+
+    PDEdit *edit1 = [diffResult objectAtIndex:0];
+    XCTAssertEqual(edit1.type, PD_DELETE);
+    XCTAssertEqualObjects(edit1.string, @"foo");
+
+    PDEdit *edit2 = [diffResult objectAtIndex:1];
+    XCTAssertEqual(edit2.type, PD_INSERT);
+    XCTAssertEqualObjects(edit2.string, @"bar");
 }
 
 - (void)testPDDiffDelete
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@"hey"
-                                       andString:@"he"], 1);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"hey" andString:@"he"];
+    XCTAssertEqual([diffResult count], 2);
 }
 
 - (void)testPDDiffInsert
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@"the"
-                                       andString:@"then"], 1);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"the" andString:@"then"];
+    XCTAssertEqual([diffResult count], 2);
 }
 
 - (void)testPDDiffDeleteInsert
 {
-    PDDiff *diff = [PDDiff new];
-    XCTAssertEqual([diff differenceBetweenString:@"too"
-                                       andString:@"two"], 2);
+    NSArray *diffResult = [PDDiff differencesBetweenString:@"too" andString:@"two"];
+    XCTAssertEqual([diffResult count], 4);
 }
 
 @end

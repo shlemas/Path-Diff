@@ -36,19 +36,18 @@
     return (NSInteger)[self.kLinePathArray count];
 }
 
-- (NSInteger)xValueForKLine:(NSInteger)kLine
+- (PDDPath *)dPathForKLine:(NSInteger)kLine
 {
     const NSInteger arrayIndex = [self getArrayIndexFromKLine:kLine];
-    NSNumber *dPath = [self.kLinePathArray objectAtIndex:arrayIndex];
-    return [dPath longValue];
+    return [self.kLinePathArray objectAtIndex:arrayIndex];
 }
 
-- (void)setXValue:(NSInteger)dPath forKLine:(NSInteger)kLine
+- (void)setDPath:(PDDPath *)dPath forKLine:(NSInteger)kLine
 {
     const NSInteger arrayIndex = [self getArrayIndexFromKLine:kLine];
 
     [self.kLinePathArray replaceObjectAtIndex:(NSUInteger)arrayIndex
-                                   withObject:[NSNumber numberWithLong:dPath]];
+                                   withObject:dPath];
 }
 
 - (NSInteger)getArrayIndexFromKLine:(NSInteger)kLine
