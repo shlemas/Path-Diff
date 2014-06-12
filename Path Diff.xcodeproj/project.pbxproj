@@ -20,6 +20,9 @@
 		98251E6B1941314200542437 /* Path_DiffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E6A1941314200542437 /* Path_DiffTests.m */; };
 		98251E761941368E00542437 /* PDDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E751941368E00542437 /* PDDiff.m */; };
 		98251E7919413D6C00542437 /* PDDPathArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E7819413D6C00542437 /* PDDPathArray.m */; };
+		9843EB501947AB1700AC75EC /* PDUnifiedDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 9843EB4F1947AB1700AC75EC /* PDUnifiedDiff.m */; };
+		98E90D7219465CF200E73E99 /* PDCharPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E90D7119465CF200E73E99 /* PDCharPath.m */; };
+		98E90D7519465E1D00E73E99 /* PDLinePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E90D7419465E1D00E73E99 /* PDLinePath.m */; };
 		98FF724019437B0B008A24EF /* PDDPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FF723F19437B0B008A24EF /* PDDPath.m */; };
 		98FF724319437B57008A24EF /* PDEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FF724219437B57008A24EF /* PDEdit.m */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,13 @@
 		98251E751941368E00542437 /* PDDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDiff.m; sourceTree = "<group>"; };
 		98251E7719413D6C00542437 /* PDDPathArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDPathArray.h; sourceTree = "<group>"; };
 		98251E7819413D6C00542437 /* PDDPathArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDPathArray.m; sourceTree = "<group>"; };
+		9843EB4E1947AB1700AC75EC /* PDUnifiedDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDUnifiedDiff.h; sourceTree = "<group>"; };
+		9843EB4F1947AB1700AC75EC /* PDUnifiedDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDUnifiedDiff.m; sourceTree = "<group>"; };
+		98E90D6F19465C0500E73E99 /* PDStringPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDStringPath.h; sourceTree = "<group>"; };
+		98E90D7019465CF200E73E99 /* PDCharPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDCharPath.h; sourceTree = "<group>"; };
+		98E90D7119465CF200E73E99 /* PDCharPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDCharPath.m; sourceTree = "<group>"; };
+		98E90D7319465E1D00E73E99 /* PDLinePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDLinePath.h; sourceTree = "<group>"; };
+		98E90D7419465E1D00E73E99 /* PDLinePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDLinePath.m; sourceTree = "<group>"; };
 		98FF723E19437B0B008A24EF /* PDDPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDPath.h; sourceTree = "<group>"; };
 		98FF723F19437B0B008A24EF /* PDDPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDPath.m; sourceTree = "<group>"; };
 		98FF724119437B57008A24EF /* PDEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDEdit.h; sourceTree = "<group>"; };
@@ -135,6 +145,13 @@
 				98FF724219437B57008A24EF /* PDEdit.m */,
 				98FF723E19437B0B008A24EF /* PDDPath.h */,
 				98FF723F19437B0B008A24EF /* PDDPath.m */,
+				98E90D6F19465C0500E73E99 /* PDStringPath.h */,
+				98E90D7019465CF200E73E99 /* PDCharPath.h */,
+				98E90D7119465CF200E73E99 /* PDCharPath.m */,
+				98E90D7319465E1D00E73E99 /* PDLinePath.h */,
+				98E90D7419465E1D00E73E99 /* PDLinePath.m */,
+				9843EB4E1947AB1700AC75EC /* PDUnifiedDiff.h */,
+				9843EB4F1947AB1700AC75EC /* PDUnifiedDiff.m */,
 				98251E741941368E00542437 /* PDDiff.h */,
 				98251E751941368E00542437 /* PDDiff.m */,
 				98251E551941314100542437 /* MainMenu.xib */,
@@ -273,7 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E90D7519465E1D00E73E99 /* PDLinePath.m in Sources */,
+				9843EB501947AB1700AC75EC /* PDUnifiedDiff.m in Sources */,
 				98251E7919413D6C00542437 /* PDDPathArray.m in Sources */,
+				98E90D7219465CF200E73E99 /* PDCharPath.m in Sources */,
 				98FF724019437B0B008A24EF /* PDDPath.m in Sources */,
 				98251E541941314100542437 /* PDAppDelegate.m in Sources */,
 				98FF724319437B57008A24EF /* PDEdit.m in Sources */,

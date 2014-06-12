@@ -10,6 +10,13 @@
 
 @implementation PDDPath
 
+- (id)initWithEndX:(NSInteger)xValue
+{
+    self = [super init];
+    _x = xValue;
+    return self;
+}
+
 - (id)copyWithZone:(NSZone *)zone
 {
     PDDPath *copy = [[PDDPath allocWithZone:zone] init];
@@ -18,13 +25,6 @@
     copy.equal = self.equal;
     copy.x = self.x;
     return copy;
-}
-
-+ (PDDPath *)dPathWithX:(NSInteger)endXValue
-{
-    PDDPath *dPath = [PDDPath new];
-    dPath.x = endXValue;
-    return dPath;
 }
 
 @end

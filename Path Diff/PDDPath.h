@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PDEdit.h"
+#import "PDStringPath.h"
 
 @interface PDDPath : NSObject <NSCopying>
 
@@ -16,8 +17,7 @@
 @property PDEdit *equal;
 @property NSInteger x;
 
+- (id)initWithEndX:(NSInteger)xValue;
 - (id)copyWithZone:(NSZone *)zone;
-
-+ (PDDPath *)dPathWithX:(NSInteger)endXValue;
 
 @end

@@ -17,6 +17,4 @@
 - (PDDPath *)dPathForKLine:(NSInteger)kLine;
 - (void)setDPath:(PDDPath *)dPath forKLine:(NSInteger)kLine;
 
-+ (id)dPathArrayWithNumberOfKLines:(NSInteger)numberOfKLines;
-
 @end

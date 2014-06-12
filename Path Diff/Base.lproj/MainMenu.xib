@@ -13,11 +13,11 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="PDAppDelegate">
             <connections>
-                <outlet property="LeftTextField" destination="alh-MV-Rk0" id="3kH-GD-Vbk"/>
-                <outlet property="RightTextField" destination="lAJ-Ts-SxI" id="shu-aI-ZG4"/>
-                <outlet property="diffTextView" destination="Ksw-Ar-vD6" id="vwu-Xw-o8h"/>
-                <outlet property="leftTextField" destination="alh-MV-Rk0" id="V3B-Od-noA"/>
-                <outlet property="rightTextField" destination="lAJ-Ts-SxI" id="4sD-jx-7uf"/>
+                <outlet property="diffDisplayChanged" destination="gX8-EC-siw" id="Qxy-8k-XUo"/>
+                <outlet property="diffTextView" destination="Q2U-Tf-RHd" id="bIw-UA-CFt"/>
+                <outlet property="diffTypeRadioButtons" destination="epo-9r-dJl" id="r0f-g6-CWZ"/>
+                <outlet property="leftTextView" destination="aXs-fA-bKs" id="AFY-gi-xTa"/>
+                <outlet property="rightTextView" destination="LxY-r0-nQe" id="ibg-9a-Omr"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -671,69 +671,211 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Path Diff" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="String Diff" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="572" height="481"/>
+            <rect key="contentRect" x="335" y="390" width="441" height="572"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="572" height="481"/>
+                <rect key="frame" x="0.0" y="0.0" width="441" height="572"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alh-MV-Rk0">
-                        <rect key="frame" x="20" y="187" width="265" height="274"/>
+                    <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3DM-1U-9yq">
+                        <rect key="frame" x="20" y="307" width="401" height="245"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DtC-jk-9fe">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <outlet property="delegate" destination="Voe-Tx-rLC" id="D1Q-3S-R3k"/>
-                        </connections>
-                    </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lAJ-Ts-SxI">
-                        <rect key="frame" x="293" y="187" width="259" height="274"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="QdB-N3-MKf">
+                                <rect key="frame" x="0.0" y="0.0" width="204" height="245"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" id="f9z-yJ-MLu">
+                                    <rect key="frame" x="1" y="1" width="202" height="243"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="aXs-fA-bKs">
+                                            <rect key="frame" x="0.0" y="0.0" width="218" height="243"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="202" height="243"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="202" height="243"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Voe-Tx-rLC" id="D1h-3j-PUj"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="TLd-gb-TCv">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="a94-rD-1dY">
+                                    <rect key="frame" x="187" y="1" width="16" height="243"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="Le5-i2-xJK">
+                                <rect key="frame" x="205" y="0.0" width="196" height="245"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" id="uXc-et-nD2">
+                                    <rect key="frame" x="1" y="1" width="194" height="243"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="LxY-r0-nQe">
+                                            <rect key="frame" x="0.0" y="0.0" width="210" height="243"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="194" height="243"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="194" height="243"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Voe-Tx-rLC" id="TeR-3T-IzA"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Xa7-yI-cWr">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Tr7-8H-MGY">
+                                    <rect key="frame" x="179" y="1" width="16" height="243"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ihv-GS-hoq">
+                        <rect key="frame" x="18" y="282" width="128" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="fM0-kg-5wp">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Type of differences:" id="ZLG-T7-JjB">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
-                        <connections>
-                            <outlet property="delegate" destination="Voe-Tx-rLC" id="rLt-u1-tMJ"/>
-                        </connections>
                     </textField>
-                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzt-qg-Y6f">
-                        <rect key="frame" x="20" y="20" width="532" height="159"/>
+                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epo-9r-dJl">
+                        <rect key="frame" x="152" y="261" width="98" height="38"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="98" id="3wp-A4-o34"/>
+                        </constraints>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="89" height="18"/>
+                        <size key="intercellSpacing" width="4" height="2"/>
+                        <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="Zl6-49-fcv">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="radio" title="Characters" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="7h0-Pv-etg">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="Lines" imagePosition="left" alignment="left" inset="2" id="iMK-h2-haA">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                        <connections>
+                            <action selector="diffTypeChanged:" target="Voe-Tx-rLC" id="374-8f-zIs"/>
+                        </connections>
+                    </matrix>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2H-6h-Eqa">
+                        <rect key="frame" x="20" y="20" width="401" height="233"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <clipView key="contentView" ambiguous="YES" misplaced="YES" id="p9r-4G-kKH">
-                            <rect key="frame" x="1" y="1" width="530" height="157"/>
+                        <clipView key="contentView" id="P2J-ld-xtR">
+                            <rect key="frame" x="1" y="1" width="399" height="231"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Ksw-Ar-vD6">
-                                    <rect key="frame" x="0.0" y="0.0" width="530" height="157"/>
+                                <textView importsGraphics="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="Q2U-Tf-RHd">
+                                    <rect key="frame" x="0.0" y="0.0" width="399" height="231"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="530" height="157"/>
-                                    <size key="maxSize" width="530" height="10000000"/>
+                                    <size key="minSize" width="399" height="231"/>
+                                    <size key="maxSize" width="505" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="530" height="157"/>
-                                    <size key="maxSize" width="530" height="10000000"/>
+                                    <size key="minSize" width="399" height="231"/>
+                                    <size key="maxSize" width="505" height="10000000"/>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="TA4-D3-MQD">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="2zx-k8-YAc">
                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="f1M-tC-NG6">
-                            <rect key="frame" x="515" y="1" width="16" height="157"/>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="VQ7-sv-KqT">
+                            <rect key="frame" x="384" y="1" width="16" height="231"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YqY-No-gDH">
+                        <rect key="frame" x="256" y="282" width="59" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Show as:" id="dKv-Ae-08i">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gX8-EC-siw">
+                        <rect key="frame" x="321" y="261" width="100" height="38"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <size key="cellSize" width="100" height="18"/>
+                        <size key="intercellSpacing" width="4" height="2"/>
+                        <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="Tlb-BU-Imv">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <cells>
+                            <column>
+                                <buttonCell type="radio" title="Colored text" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="W2s-bS-isy">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <buttonCell type="radio" title="Unified diff" imagePosition="left" alignment="left" inset="2" id="I2J-yQ-Fr8">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </column>
+                        </cells>
+                        <connections>
+                            <action selector="diffDisplayChanged:" target="Voe-Tx-rLC" id="Lo2-n2-58d"/>
+                        </connections>
+                    </matrix>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Ihv-GS-hoq" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="273" id="5Yq-8m-tW4"/>
+                    <constraint firstItem="gX8-EC-siw" firstAttribute="top" secondItem="3DM-1U-9yq" secondAttribute="bottom" constant="8" symbolic="YES" id="AEZ-3P-CHZ"/>
+                    <constraint firstAttribute="trailing" secondItem="3DM-1U-9yq" secondAttribute="trailing" constant="20" symbolic="YES" id="Asf-hV-Lck"/>
+                    <constraint firstItem="3DM-1U-9yq" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="D3M-CK-Rtm"/>
+                    <constraint firstItem="epo-9r-dJl" firstAttribute="top" secondItem="3DM-1U-9yq" secondAttribute="bottom" constant="8" symbolic="YES" id="K0R-bl-ivQ"/>
+                    <constraint firstAttribute="bottom" secondItem="Z2H-6h-Eqa" secondAttribute="bottom" constant="20" symbolic="YES" id="LhT-w6-QWn"/>
+                    <constraint firstItem="gX8-EC-siw" firstAttribute="leading" secondItem="YqY-No-gDH" secondAttribute="trailing" constant="8" symbolic="YES" id="Udw-zX-8Jy"/>
+                    <constraint firstItem="YqY-No-gDH" firstAttribute="baseline" secondItem="Ihv-GS-hoq" secondAttribute="baseline" id="a2O-Cq-sEw"/>
+                    <constraint firstItem="3DM-1U-9yq" firstAttribute="leading" secondItem="Ihv-GS-hoq" secondAttribute="leading" id="dB3-b3-C3M"/>
+                    <constraint firstItem="Z2H-6h-Eqa" firstAttribute="top" secondItem="epo-9r-dJl" secondAttribute="bottom" constant="8" symbolic="YES" id="hIe-KT-Nki"/>
+                    <constraint firstItem="Ihv-GS-hoq" firstAttribute="top" secondItem="3DM-1U-9yq" secondAttribute="bottom" constant="8" symbolic="YES" id="knd-gJ-JLy"/>
+                    <constraint firstItem="epo-9r-dJl" firstAttribute="leading" secondItem="Ihv-GS-hoq" secondAttribute="trailing" constant="8" symbolic="YES" id="oGj-ot-kbx"/>
+                    <constraint firstItem="YqY-No-gDH" firstAttribute="leading" secondItem="epo-9r-dJl" secondAttribute="trailing" constant="8" symbolic="YES" id="okG-UK-4uJ"/>
+                    <constraint firstItem="3DM-1U-9yq" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="omq-cx-s2t"/>
+                    <constraint firstItem="3DM-1U-9yq" firstAttribute="trailing" secondItem="gX8-EC-siw" secondAttribute="trailing" id="pRQ-Hu-PSu"/>
+                    <constraint firstItem="Ihv-GS-hoq" firstAttribute="leading" secondItem="Z2H-6h-Eqa" secondAttribute="leading" id="rLz-XJ-Kvg"/>
+                    <constraint firstItem="gX8-EC-siw" firstAttribute="trailing" secondItem="Z2H-6h-Eqa" secondAttribute="trailing" id="xvw-3R-UBt"/>
+                </constraints>
             </view>
         </window>
     </objects>

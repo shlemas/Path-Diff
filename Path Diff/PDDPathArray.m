@@ -12,7 +12,7 @@
 
 @property NSMutableArray *kLinePathArray;
 
-- (NSInteger)getArrayIndexFromKLine:(NSInteger)kLine;
+- (NSUInteger)arrayIndexForKLine:(NSInteger)kLine;
 
 @end
 
@@ -21,13 +21,9 @@
 - (id)initWithNumberOfKLines:(NSInteger)numberOfKLines
 {
     self = [super init];
-
-    if (self) {
-        self.kLinePathArray = [NSMutableArray arrayWithCapacity:numberOfKLines];
-        for (NSInteger i = 0; i < numberOfKLines; i++)
-            [self.kLinePathArray addObject:[NSNull null]];
-    }
-
+    _kLinePathArray = [NSMutableArray arrayWithCapacity:numberOfKLines];
+    for (NSInteger i = 0; i < numberOfKLines; i++)
+        [_kLinePathArray addObject:[NSNull null]];
     return self;
 }
 
@@ -38,28 +34,20 @@
 
 - (PDDPath *)dPathForKLine:(NSInteger)kLine
 {
-    const NSInteger arrayIndex = [self getArrayIndexFromKLine:kLine];
-    return [self.kLinePathArray objectAtIndex:arrayIndex];
+    return [self.kLinePathArray objectAtIndex:[self arrayIndexForKLine:kLine]];
 }
 
 - (void)setDPath:(PDDPath *)dPath forKLine:(NSInteger)kLine
 {
-    const NSInteger arrayIndex = [self getArrayIndexFromKLine:kLine];
-
-    [self.kLinePathArray replaceObjectAtIndex:(NSUInteger)arrayIndex
+    [self.kLinePathArray replaceObjectAtIndex:[self arrayIndexForKLine:kLine]
                                    withObject:dPath];
 }
 
-- (NSInteger)getArrayIndexFromKLine:(NSInteger)kLine
+- (NSUInteger)arrayIndexForKLine:(NSInteger)kLine
 {
     const NSInteger arrayIndex = (kLine + ([self numberOfKLines] / 2));
     assert(arrayIndex >= 0 && arrayIndex < [self numberOfKLines]);
-    return arrayIndex;
-}
-
-+ (id)dPathArrayWithNumberOfKLines:(NSInteger)numberOfKLines
-{
-    return [[PDDPathArray alloc] initWithNumberOfKLines:numberOfKLines];
+    return (NSUInteger)arrayIndex;
 }
 
 @end

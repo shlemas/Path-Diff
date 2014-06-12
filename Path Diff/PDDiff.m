@@ -9,8 +9,14 @@
 #import "PDDiff.h"
 #import "PDDPathArray.h"
 #import "PDDPath.h"
+#import "PDStringPath.h"
+#import "PDCharPath.h"
+#import "PDLinePath.h"
 
 @interface PDDPath ()
+
++ (NSArray *)differencesBetweenObject:(id <PDStringPath>)leftObject
+                            andObject:(id <PDStringPath>)rightObject;
 
 + (NSArray *)solutionEndingWithDPath:(PDDPath *)dPath;
 
@@ -18,67 +24,52 @@
 
 @implementation PDDiff
 
-+ (NSArray *)differencesBetweenString:(NSString *)leftString
-                            andString:(NSString *)rightString
++ (NSArray *)differencesBetweenObject:(id <PDStringPath>)leftObject
+                            andObject:(id <PDStringPath>)rightObject
 {
-    const NSInteger N = [leftString length];
-    const NSInteger M = [rightString length];
+    const NSInteger N = [leftObject length];
+    const NSInteger M = [rightObject length];
 
-    if (N == 0 && M != 0)
-        return [NSArray arrayWithObject:[PDEdit editThatInsertsString:rightString]];
+    if (N > 0 && M > 0) {
+        const NSInteger MAX = N + M;
+        PDDPathArray *V = [[PDDPathArray alloc] initWithNumberOfKLines:((MAX * 2) + 1)];
 
-    if (M == 0 && N != 0)
-        return [NSArray arrayWithObject:[PDEdit editThatDeletesString:leftString]];
-
-    const NSInteger MAX = N + M;
-
-    if (MAX > 0) {
-        PDDPathArray *V = [PDDPathArray dPathArrayWithNumberOfKLines:(MAX * 2)];
-
-        [V setDPath:[PDDPath dPathWithX:0] forKLine:1];
+        [V setDPath:[[PDDPath alloc] initWithEndX:0] forKLine:1];
 
         for (NSInteger D = 0; D <= MAX; D++) {
             for (NSInteger k = -D; k <= D; k += 2) {
-                PDDPath *dPath = [PDDPath new];
-                PDEditType editType = PD_INVALID;
+                PDDPath *dPath = [[PDDPath alloc] init];
                 NSInteger y;
+                PDEditType editType;
+                NSMutableString *equalString = [[NSMutableString alloc] init];
 
-                if (k == -D || (k != D && [V dPathForKLine:(k + 1)].x >= [V dPathForKLine:(k - 1)].x)) {
-                    PDDPath *parentDPath = [V dPathForKLine:(k + 1)];
-                    dPath.parentDPath = [parentDPath copy];
-                    dPath.x = parentDPath.x;
+                if (k == -D || (k != D && [V dPathForKLine:(k + 1)].x > [V dPathForKLine:(k - 1)].x)) {
+                    dPath.parentDPath = [[V dPathForKLine:(k + 1)] copy];
+                    dPath.x = dPath.parentDPath.x;
                     editType = PD_INSERT;
                 } else {
-                    PDDPath *parentDPath = [V dPathForKLine:(k - 1)];
-                    dPath.parentDPath = [parentDPath copy];
-                    dPath.x = parentDPath.x + 1;
+                    dPath.parentDPath = [[V dPathForKLine:(k - 1)] copy];
+                    dPath.x = dPath.parentDPath.x + 1;
                     editType = PD_DELETE;
                 }
 
                 y = dPath.x - k;
 
                 if (D > 0) {
-                    if (editType == PD_INSERT && (y - 1) < M) {
-                        const unichar insertedChar = [rightString characterAtIndex:(y - 1)];
-                        NSString *insertedStr = [NSString stringWithCharacters:&insertedChar length:1];
-                        dPath.edit = [PDEdit editThatInsertsString:insertedStr];
-                    } else if (editType == PD_DELETE && (dPath.x - 1) < N) {
-                        const unichar deletedChar = [leftString characterAtIndex:(dPath.x - 1)];
-                        NSString *deletedStr = [NSString stringWithCharacters:&deletedChar length:1];
-                        dPath.edit = [PDEdit editThatDeletesString:deletedStr];
-                    }
+                    if (editType == PD_INSERT && (y - 1) < M)
+                        dPath.edit = [PDEdit editThatInsertsString:[rightObject stringAtIndex:(y - 1)]];
+                    else if (editType == PD_DELETE && (dPath.x - 1) < N)
+                        dPath.edit = [PDEdit editThatDeletesString:[leftObject stringAtIndex:(dPath.x - 1)]];
                 }
 
-                NSMutableString *equalStr = [NSMutableString string];
-                while (dPath.x < N && y < M && [leftString characterAtIndex:dPath.x] == [rightString characterAtIndex:y]) {
-                    const unichar equalChar = [leftString characterAtIndex:dPath.x];
-                    [equalStr appendString:[NSString stringWithCharacters:&equalChar length:1]];
+                while (dPath.x < N && y < M && [[leftObject stringAtIndex:dPath.x] isEqualToString:[rightObject stringAtIndex:y]]) {
+                    [equalString appendString:[leftObject stringAtIndex:dPath.x]];
                     dPath.x++;
                     y++;
                 }
 
-                if ([equalStr length] > 0)
-                    dPath.equal = [PDEdit editWithEqualString:equalStr];
+                if ([equalString length] > 0)
+                    dPath.equal = [PDEdit editWithEqualString:equalString];
 
                 if (dPath.x == N && y == M)
                     return [PDDiff solutionEndingWithDPath:dPath];
@@ -88,7 +79,27 @@
         }
     }
 
+    if (N == 0 && M != 0)
+        return [NSArray arrayWithObject:[PDEdit editThatInsertsString:[rightObject string]]];
+
+    if (M == 0 && N != 0)
+        return [NSArray arrayWithObject:[PDEdit editThatDeletesString:[leftObject string]]];
+
     return [NSArray arrayWithObject:[PDEdit editWithEqualString:@""]];
+}
+
++ (NSArray *)characterDifferencesBetweenString:(NSString *)leftString
+                                     andString:(NSString *)rightString
+{
+    return [PDDiff differencesBetweenObject:[[PDCharPath alloc] initWithString:leftString]
+                                  andObject:[[PDCharPath alloc] initWithString:rightString]];
+}
+
++ (NSArray *)lineDifferencesBetweenString:(NSString *)leftString
+                                andString:(NSString *)rightString
+{
+    return [PDDiff differencesBetweenObject:[[PDLinePath alloc] initWithString:leftString]
+                                  andObject:[[PDLinePath alloc] initWithString:rightString]];
 }
 
 + (NSArray *)solutionEndingWithDPath:(PDDPath *)dPath
@@ -100,7 +111,7 @@
             [edits insertObject:dPath.equal atIndex:0];
 
         if (dPath.edit) {
-            PDEdit *prevEdit = ([edits count] > 0) ? [edits firstObject] : nil;
+            PDEdit *prevEdit = [edits firstObject];
             if (prevEdit && (prevEdit.type == dPath.edit.type))
                 prevEdit.string = [dPath.edit.string stringByAppendingString:prevEdit.string];
             else

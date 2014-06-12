@@ -8,35 +8,34 @@
 
 #import "PDEdit.h"
 
-@interface PDEdit ()
-
-+ (id)editOfType:(PDEditType)type withString:(NSString *)string;
-
-@end
-
 @implementation PDEdit
 
-+ (id)editOfType:(PDEditType)type withString:(NSString *)string
+- (id)init
 {
-    PDEdit *edit = [PDEdit new];
-    edit.type = type;
-    edit.string = string;
-    return edit;
+    return [self initEditOfType:PD_INVALID withString:@""];
+}
+
+- (id)initEditOfType:(PDEditType)type withString:(NSString *)string
+{
+    self = [super init];
+    _type = type;
+    _string = [[NSMutableString alloc] initWithString:string];
+    return self;
 }
 
 + (PDEdit *)editThatInsertsString:(NSString *)string
 {
-    return [PDEdit editOfType:PD_INSERT withString:string];
+    return [[PDEdit alloc] initEditOfType:PD_INSERT withString:string];
 }
 
 + (PDEdit *)editThatDeletesString:(NSString *)string
 {
-    return [PDEdit editOfType:PD_DELETE withString:string];
+    return [[PDEdit alloc] initEditOfType:PD_DELETE withString:string];
 }
 
 + (PDEdit *)editWithEqualString:(NSString *)string
 {
-    return [PDEdit editOfType:PD_EQUAL withString:string];
+    return [[PDEdit alloc] initEditOfType:PD_EQUAL withString:string];
 }
 
 @end

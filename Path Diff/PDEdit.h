@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, PDEditType) {
-    PD_DELETE,
     PD_INSERT,
+    PD_DELETE,
     PD_EQUAL,
 
     PD_INVALID
@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, PDEditType) {
 
 @property PDEditType type;
 @property NSString *string;
+
+- (id)init;
+- (id)initEditOfType:(PDEditType)type withString:(id)string;
 
 + (PDEdit *)editThatInsertsString:(NSString *)string;
 + (PDEdit *)editThatDeletesString:(NSString *)string;
