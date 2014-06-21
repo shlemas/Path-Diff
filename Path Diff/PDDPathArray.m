@@ -10,9 +10,9 @@
 
 @interface PDDPathArray ()
 
-@property NSMutableArray *kLinePathArray;
-
 - (NSUInteger)arrayIndexForKLine:(NSInteger)kLine;
+
+@property NSMutableArray *kLinePathArray;
 
 @end
 

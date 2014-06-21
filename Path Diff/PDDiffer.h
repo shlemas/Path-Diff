@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PDDiff : NSObject
+@interface PDDiffer : NSObject
 
 + (NSArray *)characterDifferencesBetweenString:(NSString *)leftString
                                      andString:(NSString *)rightString;

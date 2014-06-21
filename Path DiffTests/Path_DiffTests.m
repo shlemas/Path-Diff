@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import "PDDiff.h"
+#import "PDDiffer.h"
 #import "PDDPathArray.h"
 
 @interface Path_DiffTests : XCTestCase
@@ -49,7 +49,7 @@
 
 - (void)testPDDiffEmptyStrings
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"" andString:@""];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"" andString:@""];
     XCTAssertEqual([diffResult count], 1);
 
     PDEdit *edit = [diffResult firstObject];
@@ -59,7 +59,7 @@
 
 - (void)testPDDiffEmptyStringAndString
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"" andString:@"123"];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"" andString:@"123"];
     XCTAssertEqual([diffResult count], 1);
 
     PDEdit *edit = [diffResult firstObject];
@@ -69,7 +69,7 @@
 
 - (void)testPDDiffStringAndEmptyString
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"456" andString:@""];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"456" andString:@""];
     XCTAssertEqual([diffResult count], 1);
 
     PDEdit *edit = [diffResult firstObject];
@@ -79,7 +79,7 @@
 
 - (void)testPDDiffEqualStrings
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"foo" andString:@"foo"];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"foo" andString:@"foo"];
     XCTAssertEqual([diffResult count], 1);
 
     PDEdit *edit = [diffResult firstObject];
@@ -89,7 +89,7 @@
 
 - (void)testPDDiffCompletelyDifferentStrings
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"foo" andString:@"bar"];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"foo" andString:@"bar"];
     XCTAssertEqual([diffResult count], 2);
 
     PDEdit *edit1 = [diffResult objectAtIndex:0];
@@ -103,19 +103,19 @@
 
 - (void)testPDDiffDelete
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"hey" andString:@"he"];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"hey" andString:@"he"];
     XCTAssertEqual([diffResult count], 2);
 }
 
 - (void)testPDDiffInsert
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"the" andString:@"then"];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"the" andString:@"then"];
     XCTAssertEqual([diffResult count], 2);
 }
 
 - (void)testPDDiffDeleteInsert
 {
-    NSArray *diffResult = [PDDiff characterDifferencesBetweenString:@"too" andString:@"two"];
+    NSArray *diffResult = [PDDiffer characterDifferencesBetweenString:@"too" andString:@"two"];
     XCTAssertEqual([diffResult count], 4);
 }
 
@@ -124,7 +124,7 @@
     NSString *s1 = @"Foo\nBar\nBaz";
     NSString *s2 = @"Foo\nBad\nBaz";
 
-    NSArray *diffResult = [PDDiff lineDifferencesBetweenString:s1 andString:s2];
+    NSArray *diffResult = [PDDiffer lineDifferencesBetweenString:s1 andString:s2];
     XCTAssertEqual([diffResult count], 4);
 }
 

@@ -20,10 +20,12 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     PDDPath *copy = [[PDDPath allocWithZone:zone] init];
+
     copy.parentDPath = self.parentDPath;
     copy.edit = self.edit;
     copy.equal = self.equal;
     copy.x = self.x;
+
     return copy;
 }
 

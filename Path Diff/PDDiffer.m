@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Shawn LeMaster. All rights reserved.
 //
 
-#import "PDDiff.h"
+#import "PDDiffer.h"
 #import "PDDPathArray.h"
 #import "PDDPath.h"
 #import "PDStringPath.h"
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation PDDiff
+@implementation PDDiffer
 
 + (NSArray *)differencesBetweenObject:(id <PDStringPath>)leftObject
                             andObject:(id <PDStringPath>)rightObject
@@ -72,7 +72,7 @@
                     dPath.equal = [PDEdit editWithEqualString:equalString];
 
                 if (dPath.x == N && y == M)
-                    return [PDDiff solutionEndingWithDPath:dPath];
+                    return [PDDiffer solutionEndingWithDPath:dPath];
 
                 [V setDPath:dPath forKLine:k];
             }
@@ -91,15 +91,15 @@
 + (NSArray *)characterDifferencesBetweenString:(NSString *)leftString
                                      andString:(NSString *)rightString
 {
-    return [PDDiff differencesBetweenObject:[[PDCharPath alloc] initWithString:leftString]
-                                  andObject:[[PDCharPath alloc] initWithString:rightString]];
+    return [PDDiffer differencesBetweenObject:[[PDCharPath alloc] initWithString:leftString]
+                                    andObject:[[PDCharPath alloc] initWithString:rightString]];
 }
 
 + (NSArray *)lineDifferencesBetweenString:(NSString *)leftString
                                 andString:(NSString *)rightString
 {
-    return [PDDiff differencesBetweenObject:[[PDLinePath alloc] initWithString:leftString]
-                                  andObject:[[PDLinePath alloc] initWithString:rightString]];
+    return [PDDiffer differencesBetweenObject:[[PDLinePath alloc] initWithString:leftString]
+                                    andObject:[[PDLinePath alloc] initWithString:rightString]];
 }
 
 + (NSArray *)solutionEndingWithDPath:(PDDPath *)dPath

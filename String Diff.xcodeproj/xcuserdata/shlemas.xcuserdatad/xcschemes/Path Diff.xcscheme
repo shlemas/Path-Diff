@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "98251E3C1941314100542437"
-               BuildableName = "Path Diff.app"
-               BlueprintName = "Path Diff"
-               ReferencedContainer = "container:Path Diff.xcodeproj">
+               BuildableName = "String Diff.app"
+               BlueprintName = "String Diff"
+               ReferencedContainer = "container:String Diff.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "98251E5D1941314200542437"
-               BuildableName = "Path DiffTests.xctest"
-               BlueprintName = "Path DiffTests"
-               ReferencedContainer = "container:Path Diff.xcodeproj">
+               BuildableName = "String DiffTests.xctest"
+               BlueprintName = "String DiffTests"
+               ReferencedContainer = "container:String Diff.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98251E3C1941314100542437"
-            BuildableName = "Path Diff.app"
-            BlueprintName = "Path Diff"
-            ReferencedContainer = "container:Path Diff.xcodeproj">
+            BuildableName = "String Diff.app"
+            BlueprintName = "String Diff"
+            ReferencedContainer = "container:String Diff.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98251E3C1941314100542437"
-            BuildableName = "Path Diff.app"
-            BlueprintName = "Path Diff"
-            ReferencedContainer = "container:Path Diff.xcodeproj">
+            BuildableName = "String Diff.app"
+            BlueprintName = "String Diff"
+            ReferencedContainer = "container:String Diff.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "98251E3C1941314100542437"
-            BuildableName = "Path Diff.app"
-            BlueprintName = "Path Diff"
-            ReferencedContainer = "container:Path Diff.xcodeproj">
+            BuildableName = "String Diff.app"
+            BlueprintName = "String Diff"
+            ReferencedContainer = "container:String Diff.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

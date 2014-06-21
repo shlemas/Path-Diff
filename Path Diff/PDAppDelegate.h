@@ -8,16 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "PDFileDiff.h"
+
 @interface PDAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
-@property (unsafe_unretained) IBOutlet NSTextView *diffTextView;
-@property (unsafe_unretained) IBOutlet NSTextView *leftTextView;
-@property (unsafe_unretained) IBOutlet NSTextView *rightTextView;
-@property (weak) IBOutlet NSMatrix *diffTypeRadioButtons;
+@property PDFileDiff *fileDiff;
 
-- (void)textDidChange:(NSNotification *)aNotification;
-- (IBAction)diffTypeChanged:(NSMatrix *)sender;
-- (IBAction)diffDisplayChanged:(NSMatrix *)sender;
+- (IBAction)showOpenFilesSheet:(id)sender;
 
 @end

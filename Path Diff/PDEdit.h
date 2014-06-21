@@ -18,14 +18,14 @@ typedef NS_ENUM(NSInteger, PDEditType) {
 
 @interface PDEdit : NSObject
 
-@property PDEditType type;
-@property NSString *string;
-
 - (id)init;
 - (id)initEditOfType:(PDEditType)type withString:(id)string;
 
 + (PDEdit *)editThatInsertsString:(NSString *)string;
 + (PDEdit *)editThatDeletesString:(NSString *)string;
 + (PDEdit *)editWithEqualString:(NSString *)string;
+
+@property PDEditType type;
+@property NSString *string;
 
 @end

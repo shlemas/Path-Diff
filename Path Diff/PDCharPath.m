@@ -23,13 +23,13 @@
 
 - (NSString *)stringAtIndex:(NSInteger)index
 {
-    const unichar ch = [self.string characterAtIndex:index];
+    const unichar ch = [self.chars characterAtIndex:index];
     return [NSString stringWithCharacters:&ch length:1];
 }
 
 - (NSInteger)length
 {
-    return [self.string length];
+    return [self.chars length];
 }
 
 - (NSString *)string

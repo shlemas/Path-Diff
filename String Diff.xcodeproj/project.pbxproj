@@ -18,9 +18,15 @@
 		98251E611941314200542437 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98251E401941314100542437 /* Cocoa.framework */; };
 		98251E691941314200542437 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98251E671941314200542437 /* InfoPlist.strings */; };
 		98251E6B1941314200542437 /* Path_DiffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E6A1941314200542437 /* Path_DiffTests.m */; };
-		98251E761941368E00542437 /* PDDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E751941368E00542437 /* PDDiff.m */; };
+		98251E761941368E00542437 /* PDDiffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E751941368E00542437 /* PDDiffer.m */; };
 		98251E7919413D6C00542437 /* PDDPathArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 98251E7819413D6C00542437 /* PDDPathArray.m */; };
+		983CD7D1194D6779002417A8 /* PDOpenFilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983CD7D0194D6779002417A8 /* PDOpenFilesController.m */; };
+		983CD7D3194D67A7002417A8 /* OpenFilesSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 983CD7D2194D67A7002417A8 /* OpenFilesSheet.xib */; };
 		9843EB501947AB1700AC75EC /* PDUnifiedDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 9843EB4F1947AB1700AC75EC /* PDUnifiedDiff.m */; };
+		98ACE550194D57BD009D5C32 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98ACE54F194D57BD009D5C32 /* MainWindow.xib */; };
+		98ACE553194D596B009D5C32 /* PDMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ACE552194D596B009D5C32 /* PDMainController.m */; };
+		98AF3D9719511DA90082A199 /* PDMutableDiffString.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF3D9619511DA90082A199 /* PDMutableDiffString.m */; };
+		98B9D18B1953B4E4000D8C97 /* PDFileDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B9D18A1953B4E4000D8C97 /* PDFileDiff.m */; };
 		98E90D7219465CF200E73E99 /* PDCharPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E90D7119465CF200E73E99 /* PDCharPath.m */; };
 		98E90D7519465E1D00E73E99 /* PDLinePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E90D7419465E1D00E73E99 /* PDLinePath.m */; };
 		98FF724019437B0B008A24EF /* PDDPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FF723F19437B0B008A24EF /* PDDPath.m */; };
@@ -38,31 +44,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		98251E3D1941314100542437 /* Path Diff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Path Diff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98251E3D1941314100542437 /* String Diff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "String Diff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98251E401941314100542437 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		98251E431941314100542437 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		98251E441941314100542437 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		98251E451941314100542437 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		98251E481941314100542437 /* Path Diff-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Path Diff-Info.plist"; sourceTree = "<group>"; };
+		98251E481941314100542437 /* String Diff-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "String Diff-Info.plist"; sourceTree = "<group>"; };
 		98251E4A1941314100542437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98251E4C1941314100542437 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		98251E4E1941314100542437 /* Path Diff-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Path Diff-Prefix.pch"; sourceTree = "<group>"; };
+		98251E4E1941314100542437 /* String Diff-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "String Diff-Prefix.pch"; sourceTree = "<group>"; };
 		98251E501941314100542437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		98251E521941314100542437 /* PDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDAppDelegate.h; sourceTree = "<group>"; };
 		98251E531941314100542437 /* PDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDAppDelegate.m; sourceTree = "<group>"; };
 		98251E561941314100542437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		98251E581941314100542437 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		98251E5E1941314200542437 /* Path DiffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Path DiffTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98251E5E1941314200542437 /* String DiffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "String DiffTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98251E5F1941314200542437 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		98251E661941314200542437 /* Path DiffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Path DiffTests-Info.plist"; sourceTree = "<group>"; };
+		98251E661941314200542437 /* String DiffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "String DiffTests-Info.plist"; sourceTree = "<group>"; };
 		98251E681941314200542437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98251E6A1941314200542437 /* Path_DiffTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Path_DiffTests.m; sourceTree = "<group>"; };
-		98251E741941368E00542437 /* PDDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDiff.h; sourceTree = "<group>"; };
-		98251E751941368E00542437 /* PDDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDiff.m; sourceTree = "<group>"; };
+		98251E741941368E00542437 /* PDDiffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDiffer.h; sourceTree = "<group>"; };
+		98251E751941368E00542437 /* PDDiffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDiffer.m; sourceTree = "<group>"; };
 		98251E7719413D6C00542437 /* PDDPathArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDPathArray.h; sourceTree = "<group>"; };
 		98251E7819413D6C00542437 /* PDDPathArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDPathArray.m; sourceTree = "<group>"; };
+		983CD7CF194D6779002417A8 /* PDOpenFilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDOpenFilesController.h; sourceTree = "<group>"; };
+		983CD7D0194D6779002417A8 /* PDOpenFilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDOpenFilesController.m; sourceTree = "<group>"; };
+		983CD7D2194D67A7002417A8 /* OpenFilesSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenFilesSheet.xib; sourceTree = "<group>"; };
 		9843EB4E1947AB1700AC75EC /* PDUnifiedDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDUnifiedDiff.h; sourceTree = "<group>"; };
 		9843EB4F1947AB1700AC75EC /* PDUnifiedDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDUnifiedDiff.m; sourceTree = "<group>"; };
+		98ACE54F194D57BD009D5C32 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		98ACE551194D596B009D5C32 /* PDMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMainController.h; sourceTree = "<group>"; };
+		98ACE552194D596B009D5C32 /* PDMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMainController.m; sourceTree = "<group>"; };
+		98AF3D9519511DA90082A199 /* PDMutableDiffString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMutableDiffString.h; sourceTree = "<group>"; };
+		98AF3D9619511DA90082A199 /* PDMutableDiffString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMutableDiffString.m; sourceTree = "<group>"; };
+		98B9D1891953B4E4000D8C97 /* PDFileDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFileDiff.h; sourceTree = "<group>"; };
+		98B9D18A1953B4E4000D8C97 /* PDFileDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFileDiff.m; sourceTree = "<group>"; };
 		98E90D6F19465C0500E73E99 /* PDStringPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDStringPath.h; sourceTree = "<group>"; };
 		98E90D7019465CF200E73E99 /* PDCharPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDCharPath.h; sourceTree = "<group>"; };
 		98E90D7119465CF200E73E99 /* PDCharPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDCharPath.m; sourceTree = "<group>"; };
@@ -108,8 +124,8 @@
 		98251E3E1941314100542437 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98251E3D1941314100542437 /* Path Diff.app */,
-				98251E5E1941314200542437 /* Path DiffTests.xctest */,
+				98251E3D1941314100542437 /* String Diff.app */,
+				98251E5E1941314200542437 /* String DiffTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,8 +153,6 @@
 		98251E461941314100542437 /* Path Diff */ = {
 			isa = PBXGroup;
 			children = (
-				98251E521941314100542437 /* PDAppDelegate.h */,
-				98251E531941314100542437 /* PDAppDelegate.m */,
 				98251E7719413D6C00542437 /* PDDPathArray.h */,
 				98251E7819413D6C00542437 /* PDDPathArray.m */,
 				98FF724119437B57008A24EF /* PDEdit.h */,
@@ -152,9 +166,14 @@
 				98E90D7419465E1D00E73E99 /* PDLinePath.m */,
 				9843EB4E1947AB1700AC75EC /* PDUnifiedDiff.h */,
 				9843EB4F1947AB1700AC75EC /* PDUnifiedDiff.m */,
-				98251E741941368E00542437 /* PDDiff.h */,
-				98251E751941368E00542437 /* PDDiff.m */,
-				98251E551941314100542437 /* MainMenu.xib */,
+				98AF3D9519511DA90082A199 /* PDMutableDiffString.h */,
+				98AF3D9619511DA90082A199 /* PDMutableDiffString.m */,
+				98251E741941368E00542437 /* PDDiffer.h */,
+				98251E751941368E00542437 /* PDDiffer.m */,
+				98B9D1891953B4E4000D8C97 /* PDFileDiff.h */,
+				98B9D18A1953B4E4000D8C97 /* PDFileDiff.m */,
+				98AF3D93194FA8B60082A199 /* Controllers */,
+				98AF3D94194FA8DB0082A199 /* Views */,
 				98251E581941314100542437 /* Images.xcassets */,
 				98251E471941314100542437 /* Supporting Files */,
 			);
@@ -164,10 +183,10 @@
 		98251E471941314100542437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				98251E481941314100542437 /* Path Diff-Info.plist */,
+				98251E481941314100542437 /* String Diff-Info.plist */,
 				98251E491941314100542437 /* InfoPlist.strings */,
 				98251E4C1941314100542437 /* main.m */,
-				98251E4E1941314100542437 /* Path Diff-Prefix.pch */,
+				98251E4E1941314100542437 /* String Diff-Prefix.pch */,
 				98251E4F1941314100542437 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -185,18 +204,41 @@
 		98251E651941314200542437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				98251E661941314200542437 /* Path DiffTests-Info.plist */,
+				98251E661941314200542437 /* String DiffTests-Info.plist */,
 				98251E671941314200542437 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		98AF3D93194FA8B60082A199 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				98251E521941314100542437 /* PDAppDelegate.h */,
+				98251E531941314100542437 /* PDAppDelegate.m */,
+				98ACE551194D596B009D5C32 /* PDMainController.h */,
+				98ACE552194D596B009D5C32 /* PDMainController.m */,
+				983CD7CF194D6779002417A8 /* PDOpenFilesController.h */,
+				983CD7D0194D6779002417A8 /* PDOpenFilesController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		98AF3D94194FA8DB0082A199 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				98251E551941314100542437 /* MainMenu.xib */,
+				98ACE54F194D57BD009D5C32 /* MainWindow.xib */,
+				983CD7D2194D67A7002417A8 /* OpenFilesSheet.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		98251E3C1941314100542437 /* Path Diff */ = {
+		98251E3C1941314100542437 /* String Diff */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "Path Diff" */;
+			buildConfigurationList = 98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "String Diff" */;
 			buildPhases = (
 				98251E391941314100542437 /* Sources */,
 				98251E3A1941314100542437 /* Frameworks */,
@@ -206,14 +248,14 @@
 			);
 			dependencies = (
 			);
-			name = "Path Diff";
+			name = "String Diff";
 			productName = "Path Diff";
-			productReference = 98251E3D1941314100542437 /* Path Diff.app */;
+			productReference = 98251E3D1941314100542437 /* String Diff.app */;
 			productType = "com.apple.product-type.application";
 		};
-		98251E5D1941314200542437 /* Path DiffTests */ = {
+		98251E5D1941314200542437 /* String DiffTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98251E711941314200542437 /* Build configuration list for PBXNativeTarget "Path DiffTests" */;
+			buildConfigurationList = 98251E711941314200542437 /* Build configuration list for PBXNativeTarget "String DiffTests" */;
 			buildPhases = (
 				98251E5A1941314200542437 /* Sources */,
 				98251E5B1941314200542437 /* Frameworks */,
@@ -224,9 +266,9 @@
 			dependencies = (
 				98251E631941314200542437 /* PBXTargetDependency */,
 			);
-			name = "Path DiffTests";
+			name = "String DiffTests";
 			productName = "Path DiffTests";
-			productReference = 98251E5E1941314200542437 /* Path DiffTests.xctest */;
+			productReference = 98251E5E1941314200542437 /* String DiffTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -244,7 +286,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 98251E381941314100542437 /* Build configuration list for PBXProject "Path Diff" */;
+			buildConfigurationList = 98251E381941314100542437 /* Build configuration list for PBXProject "String Diff" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -257,8 +299,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				98251E3C1941314100542437 /* Path Diff */,
-				98251E5D1941314200542437 /* Path DiffTests */,
+				98251E3C1941314100542437 /* String Diff */,
+				98251E5D1941314200542437 /* String DiffTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,9 +311,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				98251E4B1941314100542437 /* InfoPlist.strings in Resources */,
+				98ACE550194D57BD009D5C32 /* MainWindow.xib in Resources */,
 				98251E591941314100542437 /* Images.xcassets in Resources */,
 				98251E511941314100542437 /* Credits.rtf in Resources */,
 				98251E571941314100542437 /* MainMenu.xib in Resources */,
+				983CD7D3194D67A7002417A8 /* OpenFilesSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,14 +335,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E90D7519465E1D00E73E99 /* PDLinePath.m in Sources */,
+				98AF3D9719511DA90082A199 /* PDMutableDiffString.m in Sources */,
 				9843EB501947AB1700AC75EC /* PDUnifiedDiff.m in Sources */,
+				98B9D18B1953B4E4000D8C97 /* PDFileDiff.m in Sources */,
 				98251E7919413D6C00542437 /* PDDPathArray.m in Sources */,
 				98E90D7219465CF200E73E99 /* PDCharPath.m in Sources */,
 				98FF724019437B0B008A24EF /* PDDPath.m in Sources */,
 				98251E541941314100542437 /* PDAppDelegate.m in Sources */,
+				983CD7D1194D6779002417A8 /* PDOpenFilesController.m in Sources */,
+				98ACE553194D596B009D5C32 /* PDMainController.m in Sources */,
 				98FF724319437B57008A24EF /* PDEdit.m in Sources */,
 				98251E4D1941314100542437 /* main.m in Sources */,
-				98251E761941368E00542437 /* PDDiff.m in Sources */,
+				98251E761941368E00542437 /* PDDiffer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +363,7 @@
 /* Begin PBXTargetDependency section */
 		98251E631941314200542437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 98251E3C1941314100542437 /* Path Diff */;
+			target = 98251E3C1941314100542437 /* String Diff */;
 			targetProxy = 98251E621941314200542437 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -432,9 +480,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Path Diff/Path Diff-Prefix.pch";
-				INFOPLIST_FILE = "Path Diff/Path Diff-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Path Diff/String Diff-Prefix.pch";
+				INFOPLIST_FILE = "Path Diff/String Diff-Info.plist";
+				PRODUCT_NAME = "String Diff";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -445,9 +493,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Path Diff/Path Diff-Prefix.pch";
-				INFOPLIST_FILE = "Path Diff/Path Diff-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Path Diff/String Diff-Prefix.pch";
+				INFOPLIST_FILE = "Path Diff/String Diff-Info.plist";
+				PRODUCT_NAME = "String Diff";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -467,8 +515,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Path DiffTests/Path DiffTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Path DiffTests/String DiffTests-Info.plist";
+				PRODUCT_NAME = "String DiffTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -485,8 +533,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Path Diff/Path Diff-Prefix.pch";
-				INFOPLIST_FILE = "Path DiffTests/Path DiffTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Path DiffTests/String DiffTests-Info.plist";
+				PRODUCT_NAME = "String DiffTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -495,7 +543,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98251E381941314100542437 /* Build configuration list for PBXProject "Path Diff" */ = {
+		98251E381941314100542437 /* Build configuration list for PBXProject "String Diff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98251E6C1941314200542437 /* Debug */,
@@ -504,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "Path Diff" */ = {
+		98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "String Diff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98251E6F1941314200542437 /* Debug */,
@@ -513,7 +561,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98251E711941314200542437 /* Build configuration list for PBXNativeTarget "Path DiffTests" */ = {
+		98251E711941314200542437 /* Build configuration list for PBXNativeTarget "String DiffTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98251E721941314200542437 /* Debug */,

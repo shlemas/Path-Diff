@@ -12,12 +12,13 @@
 
 @interface PDDPath : NSObject <NSCopying>
 
+- (id)initWithEndX:(NSInteger)xValue;
+
+- (id)copyWithZone:(NSZone *)zone;
+
 @property PDDPath *parentDPath;
 @property PDEdit *edit;
 @property PDEdit *equal;
 @property NSInteger x;
-
-- (id)initWithEndX:(NSInteger)xValue;
-- (id)copyWithZone:(NSZone *)zone;
 
 @end
