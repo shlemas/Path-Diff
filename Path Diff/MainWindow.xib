@@ -14,14 +14,14 @@
         <window title="String Diff" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="JR4-mI-Isb">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="651" height="572"/>
+            <rect key="contentRect" x="335" y="390" width="594" height="572"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" id="eoF-pA-iYE">
-                <rect key="frame" x="0.0" y="0.0" width="651" height="572"/>
+                <rect key="frame" x="0.0" y="0.0" width="594" height="572"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wKN-WM-rcR">
-                        <rect key="frame" x="18" y="535" width="306" height="17"/>
+                        <rect key="frame" x="18" y="535" width="73" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" title="Left file.txt" id="Ry3-uR-6U8">
                             <font key="font" metaFont="system"/>
@@ -33,7 +33,7 @@
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1xd-zq-p8h">
-                        <rect key="frame" x="328" y="535" width="305" height="17"/>
+                        <rect key="frame" x="299" y="535" width="82" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" title="Right file.txt" id="z6T-qr-8aS">
                             <font key="font" metaFont="system"/>
@@ -45,20 +45,20 @@
                         </connections>
                     </textField>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="XPJ-2R-RvG">
-                        <rect key="frame" x="20" y="20" width="302" height="507"/>
+                        <rect key="frame" x="20" y="20" width="273" height="507"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" id="85T-zm-3ut">
-                            <rect key="frame" x="1" y="1" width="300" height="505"/>
+                            <rect key="frame" x="1" y="1" width="271" height="505"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="bar" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="gNv-BY-jWV">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="505"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="271" height="505"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="300" height="505"/>
+                                    <size key="minSize" width="271" height="505"/>
                                     <size key="maxSize" width="512" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="300" height="505"/>
+                                    <size key="minSize" width="271" height="505"/>
                                     <size key="maxSize" width="512" height="10000000"/>
                                     <connections>
                                         <binding destination="-2" name="attributedString" keyPath="fileDiff.leftFileDiffText" id="Ddy-wW-aGr">
@@ -76,25 +76,25 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="vZQ-PB-zLX">
-                            <rect key="frame" x="285" y="1" width="16" height="505"/>
+                            <rect key="frame" x="256" y="1" width="16" height="505"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" findBarPosition="belowContent" translatesAutoresizingMaskIntoConstraints="NO" id="DCI-UE-xfE">
-                        <rect key="frame" x="330" y="20" width="301" height="507"/>
+                        <rect key="frame" x="301" y="20" width="273" height="507"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <clipView key="contentView" id="TLl-hG-yO9">
-                            <rect key="frame" x="1" y="1" width="299" height="505"/>
+                            <rect key="frame" x="1" y="1" width="271" height="505"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="bar" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="9st-hD-UjF">
-                                    <rect key="frame" x="0.0" y="0.0" width="299" height="505"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="271" height="505"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="299" height="505"/>
+                                    <size key="minSize" width="271" height="505"/>
                                     <size key="maxSize" width="504" height="10000000"/>
                                     <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="299" height="505"/>
+                                    <size key="minSize" width="271" height="505"/>
                                     <size key="maxSize" width="504" height="10000000"/>
                                     <connections>
                                         <binding destination="-2" name="attributedString" keyPath="fileDiff.rightFileDiffText" id="9R7-6N-Dxd">
@@ -112,28 +112,25 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="CyT-ZO-Uyq">
-                            <rect key="frame" x="284" y="1" width="16" height="505"/>
+                            <rect key="frame" x="256" y="1" width="16" height="505"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="XPJ-2R-RvG" firstAttribute="trailing" secondItem="wKN-WM-rcR" secondAttribute="trailing" id="1Hg-I6-57b"/>
-                    <constraint firstItem="DCI-UE-xfE" firstAttribute="leading" secondItem="1xd-zq-p8h" secondAttribute="leading" id="46U-Yt-nCI"/>
-                    <constraint firstItem="XPJ-2R-RvG" firstAttribute="top" secondItem="wKN-WM-rcR" secondAttribute="bottom" constant="8" id="5JN-XU-NVZ"/>
-                    <constraint firstItem="XPJ-2R-RvG" firstAttribute="leading" secondItem="eoF-pA-iYE" secondAttribute="leading" constant="20" id="A92-qb-eIe"/>
-                    <constraint firstItem="DCI-UE-xfE" firstAttribute="top" secondItem="1xd-zq-p8h" secondAttribute="bottom" constant="8" id="D4v-5b-pMe"/>
-                    <constraint firstAttribute="bottom" secondItem="XPJ-2R-RvG" secondAttribute="bottom" constant="20" id="DHX-Lg-nfq"/>
-                    <constraint firstAttribute="bottom" secondItem="DCI-UE-xfE" secondAttribute="bottom" constant="20" id="Fcz-8B-2eL"/>
-                    <constraint firstItem="DCI-UE-xfE" firstAttribute="trailing" secondItem="1xd-zq-p8h" secondAttribute="trailing" id="UNN-Y6-YxB"/>
-                    <constraint firstItem="wKN-WM-rcR" firstAttribute="top" secondItem="eoF-pA-iYE" secondAttribute="top" constant="20" id="VT0-K6-2LG"/>
-                    <constraint firstItem="DCI-UE-xfE" firstAttribute="width" secondItem="XPJ-2R-RvG" secondAttribute="width" constant="-1" id="XTu-YI-6Vj"/>
-                    <constraint firstItem="1xd-zq-p8h" firstAttribute="top" secondItem="eoF-pA-iYE" secondAttribute="top" constant="20" id="Zge-yx-Yjs"/>
-                    <constraint firstAttribute="trailing" secondItem="1xd-zq-p8h" secondAttribute="trailing" constant="20" id="d7a-xf-iBs"/>
-                    <constraint firstItem="DCI-UE-xfE" firstAttribute="leading" secondItem="XPJ-2R-RvG" secondAttribute="trailing" constant="8" id="sUD-hj-WTz"/>
-                    <constraint firstAttribute="trailing" secondItem="DCI-UE-xfE" secondAttribute="trailing" constant="20" id="tRk-Mf-cJR"/>
-                    <constraint firstItem="XPJ-2R-RvG" firstAttribute="leading" secondItem="wKN-WM-rcR" secondAttribute="leading" id="tfu-YN-upy"/>
-                    <constraint firstItem="wKN-WM-rcR" firstAttribute="leading" secondItem="eoF-pA-iYE" secondAttribute="leading" constant="20" id="tp7-qt-nIo"/>
+                    <constraint firstItem="wKN-WM-rcR" firstAttribute="leading" secondItem="XPJ-2R-RvG" secondAttribute="leading" id="2DP-dN-CeC"/>
+                    <constraint firstItem="DCI-UE-xfE" firstAttribute="leading" secondItem="XPJ-2R-RvG" secondAttribute="trailing" constant="8" symbolic="YES" id="Uy6-pD-vfG"/>
+                    <constraint firstItem="1xd-zq-p8h" firstAttribute="leading" secondItem="DCI-UE-xfE" secondAttribute="leading" id="VTn-OM-dSE"/>
+                    <constraint firstItem="wKN-WM-rcR" firstAttribute="leading" secondItem="eoF-pA-iYE" secondAttribute="leading" constant="20" symbolic="YES" id="Vnn-ka-cpf"/>
+                    <constraint firstItem="wKN-WM-rcR" firstAttribute="top" secondItem="eoF-pA-iYE" secondAttribute="top" constant="20" symbolic="YES" id="bcO-X3-wUV"/>
+                    <constraint firstItem="1xd-zq-p8h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wKN-WM-rcR" secondAttribute="trailing" constant="8" symbolic="YES" id="dBJ-zT-55x"/>
+                    <constraint firstItem="DCI-UE-xfE" firstAttribute="width" secondItem="XPJ-2R-RvG" secondAttribute="width" id="e7i-Ov-d3q"/>
+                    <constraint firstItem="DCI-UE-xfE" firstAttribute="bottom" secondItem="XPJ-2R-RvG" secondAttribute="bottom" id="fYx-ag-AcJ"/>
+                    <constraint firstAttribute="trailing" secondItem="DCI-UE-xfE" secondAttribute="trailing" constant="20" symbolic="YES" id="ntY-ud-wRp"/>
+                    <constraint firstItem="wKN-WM-rcR" firstAttribute="baseline" secondItem="1xd-zq-p8h" secondAttribute="baseline" id="r9x-Nu-ybQ"/>
+                    <constraint firstAttribute="bottom" secondItem="XPJ-2R-RvG" secondAttribute="bottom" constant="20" symbolic="YES" id="uG9-7Q-DRB"/>
+                    <constraint firstItem="DCI-UE-xfE" firstAttribute="top" secondItem="1xd-zq-p8h" secondAttribute="bottom" constant="8" symbolic="YES" id="wBj-Eh-yFH"/>
+                    <constraint firstItem="XPJ-2R-RvG" firstAttribute="top" secondItem="wKN-WM-rcR" secondAttribute="bottom" constant="8" symbolic="YES" id="woQ-oD-hSk"/>
                 </constraints>
             </view>
         </window>
