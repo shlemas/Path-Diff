@@ -44,23 +44,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		98251E3D1941314100542437 /* String Diff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "String Diff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98251E3D1941314100542437 /* Path Diff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Path Diff.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98251E401941314100542437 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		98251E431941314100542437 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		98251E441941314100542437 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		98251E451941314100542437 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		98251E481941314100542437 /* String Diff-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "String Diff-Info.plist"; sourceTree = "<group>"; };
+		98251E481941314100542437 /* Path Diff-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Path Diff-Info.plist"; sourceTree = "<group>"; };
 		98251E4A1941314100542437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98251E4C1941314100542437 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		98251E4E1941314100542437 /* String Diff-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "String Diff-Prefix.pch"; sourceTree = "<group>"; };
+		98251E4E1941314100542437 /* Path Diff-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Path Diff-Prefix.pch"; sourceTree = "<group>"; };
 		98251E501941314100542437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		98251E521941314100542437 /* PDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDAppDelegate.h; sourceTree = "<group>"; };
 		98251E531941314100542437 /* PDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDAppDelegate.m; sourceTree = "<group>"; };
 		98251E561941314100542437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		98251E581941314100542437 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		98251E5E1941314200542437 /* String DiffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "String DiffTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98251E5E1941314200542437 /* Path Diff.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Path Diff.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98251E5F1941314200542437 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		98251E661941314200542437 /* String DiffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "String DiffTests-Info.plist"; sourceTree = "<group>"; };
+		98251E661941314200542437 /* Path DiffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Path DiffTests-Info.plist"; sourceTree = "<group>"; };
 		98251E681941314200542437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98251E6A1941314200542437 /* Path_DiffTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Path_DiffTests.m; sourceTree = "<group>"; };
 		98251E741941368E00542437 /* PDDiffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDiffer.h; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 		98251E3E1941314100542437 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98251E3D1941314100542437 /* String Diff.app */,
-				98251E5E1941314200542437 /* String DiffTests.xctest */,
+				98251E3D1941314100542437 /* Path Diff.app */,
+				98251E5E1941314200542437 /* Path Diff.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,10 +183,10 @@
 		98251E471941314100542437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				98251E481941314100542437 /* String Diff-Info.plist */,
+				98251E481941314100542437 /* Path Diff-Info.plist */,
 				98251E491941314100542437 /* InfoPlist.strings */,
 				98251E4C1941314100542437 /* main.m */,
-				98251E4E1941314100542437 /* String Diff-Prefix.pch */,
+				98251E4E1941314100542437 /* Path Diff-Prefix.pch */,
 				98251E4F1941314100542437 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -204,7 +204,7 @@
 		98251E651941314200542437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				98251E661941314200542437 /* String DiffTests-Info.plist */,
+				98251E661941314200542437 /* Path DiffTests-Info.plist */,
 				98251E671941314200542437 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -236,9 +236,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		98251E3C1941314100542437 /* String Diff */ = {
+		98251E3C1941314100542437 /* Path Diff */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "String Diff" */;
+			buildConfigurationList = 98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "Path Diff" */;
 			buildPhases = (
 				98251E391941314100542437 /* Sources */,
 				98251E3A1941314100542437 /* Frameworks */,
@@ -248,14 +248,14 @@
 			);
 			dependencies = (
 			);
-			name = "String Diff";
+			name = "Path Diff";
 			productName = "Path Diff";
-			productReference = 98251E3D1941314100542437 /* String Diff.app */;
+			productReference = 98251E3D1941314100542437 /* Path Diff.app */;
 			productType = "com.apple.product-type.application";
 		};
-		98251E5D1941314200542437 /* String DiffTests */ = {
+		98251E5D1941314200542437 /* Path DiffTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98251E711941314200542437 /* Build configuration list for PBXNativeTarget "String DiffTests" */;
+			buildConfigurationList = 98251E711941314200542437 /* Build configuration list for PBXNativeTarget "Path DiffTests" */;
 			buildPhases = (
 				98251E5A1941314200542437 /* Sources */,
 				98251E5B1941314200542437 /* Frameworks */,
@@ -266,9 +266,9 @@
 			dependencies = (
 				98251E631941314200542437 /* PBXTargetDependency */,
 			);
-			name = "String DiffTests";
+			name = "Path DiffTests";
 			productName = "Path DiffTests";
-			productReference = 98251E5E1941314200542437 /* String DiffTests.xctest */;
+			productReference = 98251E5E1941314200542437 /* Path Diff.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -286,7 +286,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 98251E381941314100542437 /* Build configuration list for PBXProject "String Diff" */;
+			buildConfigurationList = 98251E381941314100542437 /* Build configuration list for PBXProject "Path Diff" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -299,8 +299,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				98251E3C1941314100542437 /* String Diff */,
-				98251E5D1941314200542437 /* String DiffTests */,
+				98251E3C1941314100542437 /* Path Diff */,
+				98251E5D1941314200542437 /* Path DiffTests */,
 			);
 		};
 /* End PBXProject section */
@@ -363,7 +363,7 @@
 /* Begin PBXTargetDependency section */
 		98251E631941314200542437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 98251E3C1941314100542437 /* String Diff */;
+			target = 98251E3C1941314100542437 /* Path Diff */;
 			targetProxy = 98251E621941314200542437 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -480,9 +480,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Path Diff/String Diff-Prefix.pch";
-				INFOPLIST_FILE = "Path Diff/String Diff-Info.plist";
-				PRODUCT_NAME = "String Diff";
+				GCC_PREFIX_HEADER = "Path Diff/Path Diff-Prefix.pch";
+				INFOPLIST_FILE = "Path Diff/Path Diff-Info.plist";
+				PRODUCT_NAME = "Path Diff";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -493,9 +493,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Path Diff/String Diff-Prefix.pch";
-				INFOPLIST_FILE = "Path Diff/String Diff-Info.plist";
-				PRODUCT_NAME = "String Diff";
+				GCC_PREFIX_HEADER = "Path Diff/Path Diff-Prefix.pch";
+				INFOPLIST_FILE = "Path Diff/Path Diff-Info.plist";
+				PRODUCT_NAME = "Path Diff";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -515,8 +515,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Path DiffTests/String DiffTests-Info.plist";
-				PRODUCT_NAME = "String DiffTests";
+				INFOPLIST_FILE = "Path DiffTests/Path DiffTests-Info.plist";
+				PRODUCT_NAME = "Path Diff";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -533,8 +533,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Path Diff/Path Diff-Prefix.pch";
-				INFOPLIST_FILE = "Path DiffTests/String DiffTests-Info.plist";
-				PRODUCT_NAME = "String DiffTests";
+				INFOPLIST_FILE = "Path DiffTests/Path DiffTests-Info.plist";
+				PRODUCT_NAME = "Path Diff";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -543,7 +543,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98251E381941314100542437 /* Build configuration list for PBXProject "String Diff" */ = {
+		98251E381941314100542437 /* Build configuration list for PBXProject "Path Diff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98251E6C1941314200542437 /* Debug */,
@@ -552,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "String Diff" */ = {
+		98251E6E1941314200542437 /* Build configuration list for PBXNativeTarget "Path Diff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98251E6F1941314200542437 /* Debug */,
@@ -561,7 +561,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98251E711941314200542437 /* Build configuration list for PBXNativeTarget "String DiffTests" */ = {
+		98251E711941314200542437 /* Build configuration list for PBXNativeTarget "Path DiffTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				98251E721941314200542437 /* Debug */,
